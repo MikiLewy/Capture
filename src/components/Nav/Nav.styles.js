@@ -23,10 +23,10 @@ export const StyledNav = styled.nav`
     flex-basis: 40%;
   }
   a {
-    color: white;
+    color: #bbb;
     text-decoration: none;
   }
   .active {
-    color: red;
+    color: white;
   }
 `;

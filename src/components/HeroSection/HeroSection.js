@@ -6,33 +6,40 @@ import {
   ImageContainer,
   Wrapper,
 } from "./HeroSection.styles";
+import { motion } from "framer-motion";
+import { titleAnim, fade, photoAnim } from "animation";
+import Wave from "components/Wave";
+import { StyledLink } from "./HeroSection.styles";
 
 const HeroSection = () => {
   return (
     <Wrapper>
       <Description>
-        <div className="title">
+        <motion.div>
           <Hide>
-            <h2>We work to make</h2>
+            <motion.h2 variants={titleAnim}>We work to make</motion.h2>
           </Hide>
           <Hide>
-            <h2>
+            <motion.h2 variants={titleAnim}>
               your <span>dreams</span>
-            </h2>
+            </motion.h2>
           </Hide>
           <Hide>
-            <h2>come true.</h2>
+            <motion.h2 variants={titleAnim}>come true.</motion.h2>
           </Hide>
-        </div>
-        <p>
+        </motion.div>
+        <motion.p variants={fade}>
           Contact us for any photography or videography ideas that you have. We
           have professionals with amazing skills
-        </p>
-        <button>Contact us</button>
+        </motion.p>
+        <StyledLink to="/contact" as={motion.button} variants={fade}>
+          Contact us
+        </StyledLink>
       </Description>
       <ImageContainer>
-        <img src={home1} alt="guy with camera" />
+        <motion.img src={home1} variants={photoAnim} alt="guy with camera" />
       </ImageContainer>
+      <Wave />
     </Wrapper>
   );
 };

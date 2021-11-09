@@ -8,6 +8,7 @@ import {
   Award,
   ImageWrapper,
 } from "./MovieDetail.styles";
+import { pageAnimation } from "animation";
 
 const MovieDetail = () => {
   const { pathname } = useLocation();
@@ -22,8 +23,13 @@ const MovieDetail = () => {
 
   return (
     <>
-      {movie ? (
-        <Details>
+      {movie && (
+        <Details
+          variants={pageAnimation}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+        >
           <HeadLine>
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt="img" />
@@ -41,10 +47,6 @@ const MovieDetail = () => {
             <img src={movie.secondaryImg} alt="" />
           </ImageWrapper>
         </Details>
-      ) : (
-        <h1 style={{ color: "white", textAlign: "center", marginTop: "40vh" }}>
-          Sory we can't load content. Try again later.
-        </h1>
       )}
     </>
   );
