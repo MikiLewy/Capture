@@ -7,6 +7,7 @@ import AboutUs from "pages/AboutUs";
 import MovieDetail from "pages/MovieDetail/MovieDetail";
 import { Routes, Route, useLocation } from "react-router";
 import { AnimatePresence } from "framer-motion";
+import ScrollTop from "components/ScrollTop";
 
 const App = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/our-work/:id" element={<MovieDetail />} />
         </Routes>
+        <ScrollTop />
       </AnimatePresence>
     </div>
   );

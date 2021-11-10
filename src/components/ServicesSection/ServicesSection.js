@@ -4,15 +4,20 @@ import diaphragm from "assets/img/diaphragm.svg";
 import money from "assets/img/money.svg";
 import teamwork from "assets/img/teamwork.svg";
 import home2 from "assets/img/home2.png";
-import {
-  Description,
-  ImageContainer,
-} from "components/HeroSection/HeroSection.styles";
-import { ServicesWrapper, Cards } from "./ServicesSection.styles";
+import { Description } from "components/HeroSection/HeroSection.styles";
+import { ServicesWrapper, Cards, ImgContainer } from "./ServicesSection.styles";
+import { scrollRevral } from "animation";
+import { useScroll } from "hooks/useScroll";
 
 const ServicesSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <ServicesWrapper>
+    <ServicesWrapper
+      variants={scrollRevral}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+    >
       <Description>
         <h2>
           High <span>quality</span> services
@@ -48,9 +53,9 @@ const ServicesSection = () => {
           </div>
         </Cards>
       </Description>
-      <ImageContainer>
+      <ImgContainer>
         <img src={home2} alt="" />
-      </ImageContainer>
+      </ImgContainer>
     </ServicesWrapper>
   );
 };

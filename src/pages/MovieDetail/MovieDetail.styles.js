@@ -27,6 +27,10 @@ export const Awards = styled.div`
   justify-content: space-around;
   align-items: center;
   margin: 5rem 10rem;
+  @media (max-width: 1300px) {
+    display: block;
+    margin: 2rem;
+  }
 `;
 export const Award = styled.div`
   padding: 5rem;

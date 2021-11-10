@@ -1,12 +1,18 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-export const Wrapper = styled.div`
+import { motion } from "framer-motion";
+export const Wrapper = styled(motion.div)`
   min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5rem 10rem;
   color: white;
+  @media (max-width: 1300px) {
+    display: block;
+    padding: 2rem 2rem;
+    text-align: center;
+  }
 `;
 
 export const Description = styled.div`
@@ -15,6 +21,9 @@ export const Description = styled.div`
   z-index: 2;
   h2 {
     font-weight: lighter;
+  }
+  @media (max-width: 1300px) {
+    padding: 0;
   }
 `;
 export const ImageContainer = styled.div`
@@ -46,5 +55,8 @@ export const StyledLink = styled(Link)`
   &:hover {
     background-color: #23d997;
     color: white;
+  }
+  @media (max-width: 1300px) {
+    margin: 2rem 0rem 5rem 0rem;
   }
 `;

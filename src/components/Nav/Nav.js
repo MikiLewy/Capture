@@ -1,8 +1,10 @@
 import React from "react";
-import { StyledNav } from "./Nav.styles";
+import { StyledNav, Line } from "./Nav.styles";
 import { Link, NavLink } from "react-router-dom";
+import { useLocation } from "react-router";
 
 const Nav = () => {
+  const { pathname } = useLocation();
   return (
     <StyledNav>
       <h1>
@@ -18,6 +20,11 @@ const Nav = () => {
           >
             About us
           </NavLink>
+          <Line
+            transition={{ duration: 0.5 }}
+            initial={{ width: "0" }}
+            animate={{ width: pathname === "/" ? "75%" : "" }}
+          />
         </li>
         <li>
           <NavLink
@@ -26,6 +33,11 @@ const Nav = () => {
           >
             Our Work
           </NavLink>
+          <Line
+            transition={{ duration: 0.5 }}
+            initial={{ width: "0" }}
+            animate={{ width: pathname === "/our-work" ? "75%" : "" }}
+          />
         </li>
         <li>
           <NavLink
@@ -34,6 +46,11 @@ const Nav = () => {
           >
             Contact Us
           </NavLink>
+          <Line
+            transition={{ duration: 0.5 }}
+            initial={{ width: "0" }}
+            animate={{ width: pathname === "/contact" ? "75%" : "" }}
+          />
         </li>
       </ul>
     </StyledNav>

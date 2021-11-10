@@ -2,10 +2,18 @@ import Toggle from "components/Toggle";
 import React from "react";
 import { FaqWrapper } from "./FaqSection.styles";
 import { AnimateSharedLayout } from "framer-motion";
+import { useScroll } from "hooks/useScroll";
+import { scrollRevral } from "animation.js";
 
 const FaqSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <FaqWrapper>
+    <FaqWrapper
+      ref={element}
+      variants={scrollRevral}
+      initial="hidden"
+      animate={controls}
+    >
       <h2>
         Any questions <span>FAQ</span>
       </h2>

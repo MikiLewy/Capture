@@ -6,9 +6,16 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+  html{
+    @media (max-width:1700px){
+      font-size:75%;
+    }
+   
+  }
   body{
       background: #1b1b1b;
       font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
   }
   button{
     font-family: 'Inter', sans-serif;
@@ -28,6 +35,9 @@ const GlobalStyles = createGlobalStyle`
   h2{
       font-weight:lighter;
       font-size:4rem;
+      @media (max-width: 1300px) {
+    font-size:2rem;
+  }
   }
   h3{
       color:white;

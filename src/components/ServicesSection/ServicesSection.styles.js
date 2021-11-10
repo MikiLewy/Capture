@@ -1,7 +1,15 @@
 import styled from "styled-components";
-import { Wrapper } from "components/HeroSection/HeroSection.styles";
+import {
+  Wrapper,
+  ImageContainer,
+} from "components/HeroSection/HeroSection.styles";
 
 export const ServicesWrapper = styled(Wrapper)`
+  @media (max-width: 1300px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   h2 {
     padding-bottom: 5rem;
   }
@@ -14,6 +22,9 @@ export const ServicesWrapper = styled(Wrapper)`
 export const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 1300px) {
+    justify-content: center;
+  }
 
   .card {
     flex-basis: 48%;
@@ -28,5 +39,11 @@ export const Cards = styled.div`
         padding: 1rem;
       }
     }
+  }
+`;
+export const ImgContainer = styled(ImageContainer)`
+  @media (max-width: 1300px) {
+    width: 100%;
+    flex-basis: 100%;
   }
 `;
